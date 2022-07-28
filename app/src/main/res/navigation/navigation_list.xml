@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_list"
+    app:startDestination="@id/collecationPagingFragment">
+
+    <fragment
+        android:id="@+id/collecationListFragment"
+        android:name="com.example.myapplication.fragments.CollectionListFragment"
+        android:label="fragment_collecation_list"
+        tools:layout="@layout/fragment_collecation_list">
+
+    </fragment>
+    <fragment
+        android:id="@+id/photoGridFragment"
+        android:name="com.example.myapplication.fragments.PhotoGridFragment"
+        android:label="fragment_photo_grid"
+        tools:layout="@layout/fragment_photo_grid">
+        <action
+            android:id="@+id/action_photoGridFragment_to_showPhotoFragment"
+            app:destination="@id/showPhotoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showPhotoFragment"
+        android:name="com.example.myapplication.fragments.ShowPhotoFragment"
+        android:label="fragment_show_photo"
+        tools:layout="@layout/fragment_show_photo" />
+    <fragment
+        android:id="@+id/collecationPagingFragment"
+        android:name="com.example.myapplication.fragments.CollectionPagingFragment"
+        android:label="fragment_collecation_paging"
+        tools:layout="@layout/fragment_collecation_paging" >
+        <action
+            android:id="@+id/action_collecationPagingFragment_to_photoGridFragment"
+            app:destination="@id/photoGridFragment" />
+    </fragment>
+</navigation>
